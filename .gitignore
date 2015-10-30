@@ -30,3 +30,4 @@
 # Ausgeschlossene Dateien und Ordner
 /vorgabe1/build/
 /vorgabe1/dep/
+bochsout.txt

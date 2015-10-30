@@ -38,7 +38,7 @@
 00000000000i[MEM0 ] rom at 0xc0000/32768 ('/home/bsb/bochs/bios/VGABIOS-elpin-2.40')
 00000000000i[VTIME] using 'realtime pit' synchronization method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Fri Oct 30 11:02:34 2015 (time0=1446199354)
+00000000000i[CMOS ] Setting initial clock to: Fri Oct 30 11:14:04 2015 (time0=1446200044)
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[DMA  ] channel 2 used by Floppy Drive
 00000000000i[FDD  ] fd0: './build/bootdisk.img' ro=0, h=2,t=80,spt=18
@@ -96,26 +96,26 @@
 00001725126i[BIOS ] Booting from 0000:7C00
 00001799740i[FDD  ] partial read() on floppy image returns 252/512
 00001826957i[CPU  ] WARNING: HLT instruction with IF=0!
-03633000280p[XGUI ] >>PANIC<< POWER button turned off.
-03633000280i[CPU  ] protected mode
-03633000280i[CPU  ] CS.d_b = 32 bit
-03633000280i[CPU  ] SS.d_b = 32 bit
-03633000280i[CPU  ] | EAX=00000000  EBX=00000010  ECX=000000af  EDX=000b899f
-03633000280i[CPU  ] | ESP=001034fc  EBP=000000b2  ESI=00012600  EDI=001015d4
-03633000280i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf ZF af PF cf
-03633000280i[CPU  ] | SEG selector     base    limit G D
-03633000280i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
-03633000280i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
-03633000280i[CPU  ] | EIP=0010005d (0010005d)
-03633000280i[CPU  ] | CR0=0x00000011 CR1=0 CR2=0x00000000
-03633000280i[CPU  ] | CR3=0x00000000 CR4=0x00000000
-03633000280i[CPU  ] >> mov edi, 0x001015d0 : BFD0151000
-03633000280i[CMOS ] Last time is 1446212329 (Fri Oct 30 14:38:49 2015)
-03633000280i[XGUI ] Exit.
-03633000280i[     ] restoring default signal behavior
-03633000280i[CTRL ] quit_sim called with exit code 1
+00800323440p[XGUI ] >>PANIC<< POWER button turned off.
+00800323440i[CPU  ] protected mode
+00800323440i[CPU  ] CS.d_b = 32 bit
+00800323440i[CPU  ] SS.d_b = 32 bit
+00800323440i[CPU  ] | EAX=00000000  EBX=00000010  ECX=000000af  EDX=000b899f
+00800323440i[CPU  ] | ESP=001034fc  EBP=000000b2  ESI=00012600  EDI=001015d4
+00800323440i[CPU  ] | IOPL=0 id vip vif ac vm rf nt of df if tf sf ZF af PF cf
+00800323440i[CPU  ] | SEG selector     base    limit G D
+00800323440i[CPU  ] | SEG sltr(index|ti|rpl)     base    limit G D
+00800323440i[CPU  ] |  CS:0008( 0001| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] |  DS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] |  SS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] |  ES:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] |  FS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] |  GS:0010( 0002| 0|  0) 00000000 000fffff 1 1
+00800323440i[CPU  ] | EIP=0010005d (0010005d)
+00800323440i[CPU  ] | CR0=0x00000011 CR1=0 CR2=0x00000000
+00800323440i[CPU  ] | CR3=0x00000000 CR4=0x00000000
+00800323440i[CPU  ] >> mov edi, 0x001015d0 : BFD0151000
+00800323440i[CMOS ] Last time is 1446202902 (Fri Oct 30 12:01:42 2015)
+00800323440i[XGUI ] Exit.
+00800323440i[     ] restoring default signal behavior
+00800323440i[CTRL ] quit_sim called with exit code 1
