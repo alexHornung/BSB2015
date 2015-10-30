@@ -26,6 +26,11 @@ public:
 /* Hier muesst ihr selbst Code vervollstaendigen */ 
  {}
 
+void show (int x, int y, char c, unsigned char attrib);
+void setpos (int x, int y);
+void getpos (int &x, int &y);
+void print (const char* text, int length, unsigned char attrib);
+
 /* Hier muesst ihr selbst Code vervollstaendigen */ 
  };
 

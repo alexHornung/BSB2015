@@ -1,0 +1,47 @@
+#!/bin/bash
+#				Thomas Glanzmann <sithglan> 1:10 2003-01-03
+#				Olaf Spinczyk    <spinczyk> 2:29 2005-10-21
+#				Wanja Hofer      <wanja>         2007-11-16
+#				Horst Schirmeier <hsc>           2007-11-19
+
+# exit the script if any statement returns a non-true value
+set -e
+
+USERID=`id -u`
+BOCHSDIR=$(dirname $0)
+
+# garbage collection
+trap "rm -f /tmp/gdbcommands.$USERID &> /dev/null" 0
+trap "exit 2" 1 2 3 15
+
+# check for bootdisk argument
+if [ -z "$1" ]; then
+	echo "syntax: $0 bootdisk.img"
+	exit 1
+fi
+
+# insert virtual hdd
+HDD1='ata0: enabled=1, ioaddr1=0x1f0, ioaddr2=0x3f0, irq=14'
+#HDD2='ata0-master: type=disk, path="'"$1"'", mode=flat, cylinders=20, heads=16, spt=63, model="TU DO/LS 12/ESS generic", biosdetect=auto, translation=auto'
+#HDD2='ata0-master: type=disk, path="'"$1"'", mode=flat, cylinders=0, heads=0, spt=0, model="TU DO/LS 12/ESS generic", biosdetect=auto, translation=auto'
+HDD2='ata0-master: type=disk, path="'"$1"'", mode=flat, model="TU DO/LS 12/ESS generic", biosdetect=auto, translation=auto'
+HDD3='boot: disk'
+
+# $BOCHSDIR relative path to BIOS images
+BIOS="romimage: file=$BOCHSDIR/bios/BIOS-bochs-latest"
+VGABIOS="vgaromimage: file=$BOCHSDIR/bios/VGABIOS-elpin-2.40"
+
+if [ $(basename $0) = bochs-gdb ]; then
+	# append the gdb settings; use the user id as the port number
+	GDB="gdbstub: enabled=1, port=$USERID, text_base=0, data_base=0, bss_base=0"
+
+	echo "break main" > /tmp/gdbcommands.$USERID
+	echo "target remote localhost:$USERID" >> /tmp/gdbcommands.$USERID
+	echo "continue" >> /tmp/gdbcommands.$USERID
+else
+	# append the setting disabling the gdb stub
+	GDB="gdbstub: enabled=0"
+fi
+
+# start bochs with no start menu and the generated configuration
+$BOCHSDIR/bin/bochs -qf $BOCHSDIR/bochsrc "$BIOS" "$VGABIOS" "$HDD1" "$HDD2" "$HDD3" "$GDB"
